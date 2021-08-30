@@ -1,6 +1,16 @@
 package com.bridgelabz;
 
-public class PrintArray {
+public class PrintArray<T> {
+	
+	private T[] inputArray;
+	
+	public PrintArray(T[] inputArray) {
+		this.inputArray = inputArray;
+	}
+	
+	public void toPrint() {
+		PrintArray.toPrint(this.inputArray);
+	}
 	
 	public static <E> void toPrint(E[] inputArray) {
 	
@@ -17,7 +27,7 @@ public class PrintArray {
 		Double[] doubleArray = {1.1,2.2,3.3,4.4,5.5};
 		Character[] charArray = {'A','S','D','F','G'};
 		
-		PrintArray.toPrint(intArray);
+		new PrintArray(intArray).toPrint();
 		PrintArray.toPrint(doubleArray);
 		PrintArray.toPrint(charArray);
 		
